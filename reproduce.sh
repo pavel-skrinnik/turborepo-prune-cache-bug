@@ -34,11 +34,8 @@ fi
 echo ""
 
 # Step 4: Run build in the pruned directory using the shared cache
-echo "--- Step 4: Building in pruned dir with shared cache (expect: FULL TURBO) ---"
+echo "--- Step 4: Building in pruned dir with shared cache (expected: FULL TURBO) ---"
 pnpm turbo build --cwd=pruned --cache-dir="$(pwd)/.turbo/cache" --ui=stream 2>&1 | grep -E '(Cached|Tasks|Time|TURBO)'
 echo ""
 
-# Step 5: Workaround — copy original package.json, rebuild
-echo "--- Step 5: Workaround — copy original package.json, rebuild ---"
-cp package.json pruned/package.json
-pnpm turbo build --cwd=pruned --cache-dir="$(pwd)/.turbo/cache" --ui=stream 2>&1 | grep -E '(Cached|Tasks|Time|TURBO)'
+ed --cache-dir="$(pwd)/.turbo/cache" --ui=stream 2>&1 | grep -E '(Cached|Tasks|Time|TURBO)'
