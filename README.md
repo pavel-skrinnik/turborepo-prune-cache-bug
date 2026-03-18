@@ -6,7 +6,7 @@ Without `patchedDependencies`, `turbo prune` copies `package.json` as-is and the
 
 ## Turbo version
 
-2.8.17
+2.8.18-canary.24
 
 ## Package manager
 
