@@ -1,0 +1,12 @@
+{
+  "name": "@repo/shared",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "mkdir -p dist && echo 'building shared' && cp src/index.js dist/index.js"
+  },
+  "dependencies": {
+    "is-odd": "3.0.1"
+  }
+}

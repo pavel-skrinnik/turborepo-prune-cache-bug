@@ -1,0 +1,12 @@
+{
+  "name": "@repo/web",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "mkdir -p dist && echo 'building web' && cp src/index.js dist/index.js"
+  },
+  "dependencies": {
+    "@repo/shared": "workspace:*"
+  }
+}
